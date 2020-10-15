@@ -114,6 +114,7 @@ def pre_intro_game(items, same_creature, treasure, treasure_item):
 
 # The real start of story for the game:
 def intro(items, same_creature, treasure, treasure_item):
+    print_pause(items)  # ******** THIS IS TO TEST WHAT ITEMS EXIST AT THIS POINT IN THE GAME
     print_pause("You find yourself standing in an open field, "
                 "filled with grass and yellow butterflies.")
     print_pause("In the distance is a rainbow. You wonder if there "
@@ -128,6 +129,7 @@ def intro(items, same_creature, treasure, treasure_item):
                 "very effective) butter knife.")
     print_pause("It still has butter on it.\n")
     items.append("butter_knife")
+    print_pause(items)  # ******** THIS IS TO TEST WHAT ITEMS EXIST AT THIS POINT IN THE GAME
 
 
 def house_or_cave_question(items, same_creature, treasure, treasure_item):
@@ -278,6 +280,11 @@ def cave(items, same_creature, treasure, treasure_item):
         print_pause("What is this doing in here?")
         print_pause("You discard your silly old butter knife and take "
                     "the assault rifle with you.\n")
+        print_pause(items)  # ******** THIS IS TO TEST WHAT ITEMS EXIST AT THIS POINT IN THE GAME
+        items.append("rifle")
+        # items.remove("butter_knife")  # There are (2x) butter_knife in items
+        items.remove("butter_knife")  # There are (2x) butter_knife in items
+        print_pause(items)  # ******** THIS IS TO TEST WHAT ITEMS EXIST AT THIS POINT IN THE GAME
         print_pause("*screech* Eek! A bat! It was hit by your butter knife.\n")
         print_pause("Your eyes shimmer as you lift the gun up to the light "
                     "in the cave.")
@@ -287,9 +294,6 @@ def cave(items, same_creature, treasure, treasure_item):
                     "how the mechanisms work.\n")
         print_pause("Let me see where the bullets go...\n")
         check_out_rifle(items, same_creature, treasure, treasure_item)
-        items.append("rifle")
-        items.remove("butter_knife")  # There are (2x) butter_knife in items
-        items.remove("butter_knife")  # There are (2x) butter_knife in items
         print_pause("You hear a thud. A bat drops to the ground.\n")
         print_pause("Oh my...I should be more careful with this!\n")
         print_pause("You wander around the cave a little bit more and "
@@ -338,10 +342,10 @@ def play_game():
                                    "cyclops", "giant python", "hungry orc",
                                    "groggy humanoid", "dark magician"])
     treasure_item = random.choice(["bejeweled crown", "golden goblet",
-                                  "dusty old treasure map"])
+                                   "dusty old treasure map"])
     pre_intro_game(items, same_creature, treasure, treasure_item)
     choose_outside_or_inside(items, same_creature, treasure, treasure_item)
-    intro(items, same_creature, treasure, treasure_item)
+    # intro(items, same_creature, treasure, treasure_item)
     house_or_cave_question(items, same_creature, treasure, treasure_item)
 
 

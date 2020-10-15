@@ -47,12 +47,12 @@ def playing_birdspan():
     print_pause(f"You wanted to roll a {target} and you got it!")
 
 
-# This story is before the game begins - it's optional for the player to 
+# This story is before the game begins - it's optional for the player to
 # go through and does not affect if you are to win/lose the game.
 def choose_outside_or_inside(items, same_creature, treasure, treasure_item):
     response = input("Would you like to (1) wander around outside "
-                "with your umbrella, or (2) stay inside to play "
-                "the board game?\n(type 1 or 2)\n")
+                     "with your umbrella, or (2) stay inside to play "
+                     "the board game?\n(type 1 or 2)\n")
     if response == "1":
         intro(items, same_creature, treasure, treasure_item)
     elif response != "1" and response != "2":
@@ -68,9 +68,8 @@ def choose_outside_or_inside(items, same_creature, treasure, treasure_item):
         print_pause("The dice have food symbols on them, representing six "
                     "different foods that the birds in the game eat\n.")
         print_pause("It's your turn. Roll the dice.\n")
-        agree = input("Do you want to roll the dice? "
-                    "It's your turn.\n"
-                    "(Type something below)\n").upper()
+        agree = input("Do you want to roll the dice? It's your turn.\n"
+                      "(Type something below)\n").upper()
         print_pause(f"'{agree}!!!' you accidentallly yell louder than "
                     "expected.\nYour voice echos through the dining "
                     "room, making you dizzy!\nIn any case, you were "
@@ -78,14 +77,14 @@ def choose_outside_or_inside(items, same_creature, treasure, treasure_item):
         print_pause("You decide to roll. I can win this!\n")
         playing_birdspan()
         name = input("Wait, who am I playing with? What's your name?\n"
-                    "(type your name)\n")
+                     "(type your name)\n")
         print_pause("A flash of lightning strikes outside the window.")
         print_pause(f"Hello there, {name}! Of course! Sorry, I didn't "
                     "recognize you there with your losing streak...")
         print_pause("Maybe one day you'll win a game./n")
         print_pause("*THUNDER*\n")
         bird = input("What's your favorite bird?\n"
-                    "(type favorite bird)\n")
+                     "(type favorite bird)\n")
         print_pause(f"{bird}? Well that can't be right...{name}, "
                     "you should go visit the zoo when you have "
                     "some spare time.")
@@ -110,11 +109,11 @@ def pre_intro_game(items, same_creature, treasure, treasure_item):
                 "board game.\nYou're also eating toast with butter.\n")
     print_pause("Yummy!!!! I love toast with butter!\n")
     print_pause("*Yawn*\nIs the rainstorm over yet?\n")
-    
+
 
 # The real start of story for the game:
 def intro(items, same_creature, treasure, treasure_item):
-    print_pause(items)  # ******** THIS IS TO TEST WHAT ITEMS EXIST AT THIS POINT IN THE GAME
+    print_pause(items)  # ******** THIS IS TO TEST WHAT ITEMS EXIST
     print_pause("You find yourself standing in an open field, "
                 "filled with grass and yellow butterflies.")
     print_pause("In the distance is a rainbow. You wonder if there "
@@ -129,7 +128,7 @@ def intro(items, same_creature, treasure, treasure_item):
                 "very effective) butter knife.")
     print_pause("It still has butter on it.\n")
     items.append("butter_knife")
-    print_pause(items)  # ******** THIS IS TO TEST WHAT ITEMS EXIST AT THIS POINT IN THE GAME
+    print_pause(items)  # ******** THIS IS TO TEST WHAT ITEMS EXIST
 
 
 def house_or_cave_question(items, same_creature, treasure, treasure_item):
@@ -253,14 +252,14 @@ def check_out_rifle(items, same_creature, treasure, treasure_item):
                      "(circle) or the square button (square)?\n"
                      "(type (circle/square))\n").lower()
     if response == "circle":
-        print_pause("You pushed in the circle shaped button. Nothing happened. Try the "
-                    "square one.")
+        print_pause("You push in the circle shaped button. Nothing happens. "
+                    "Try the square one.")
         check_out_rifle(items, same_creature, treasure, treasure_item)
     elif response == "square":
         print_pause("\n*BOOM*\n")
     else:
         print_pause("I should really check for bullets. This could "
-                "be dangerous if it's not handled properly.")
+                    "be dangerous if it's not handled properly.")
         check_out_rifle(items, same_creature, treasure, treasure_item)
 
 
@@ -280,11 +279,10 @@ def cave(items, same_creature, treasure, treasure_item):
         print_pause("What is this doing in here?")
         print_pause("You discard your silly old butter knife and take "
                     "the assault rifle with you.\n")
-        print_pause(items)  # ******** THIS IS TO TEST WHAT ITEMS EXIST AT THIS POINT IN THE GAME
+        print_pause(items)  # ******** THIS IS TO TEST WHAT ITEMS
         items.append("rifle")
-        # items.remove("butter_knife")  # There are (2x) butter_knife in items
-        items.remove("butter_knife")  # There are (2x) butter_knife in items
-        print_pause(items)  # ******** THIS IS TO TEST WHAT ITEMS EXIST AT THIS POINT IN THE GAME
+        items.remove("butter_knife")
+        print_pause(items)  # ******** THIS IS TO TEST WHAT ITEMS
         print_pause("*screech* Eek! A bat! It was hit by your butter knife.\n")
         print_pause("Your eyes shimmer as you lift the gun up to the light "
                     "in the cave.")

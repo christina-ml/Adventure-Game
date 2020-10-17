@@ -31,6 +31,25 @@ def house_cave():
     print_fast("^.^.^.^.^.^.^.^.^.^.^.^.^.^.^.^.^.^.^.^.^.^.^.^.^.^.^.^.^.^")
 
 
+def standing():
+    print_fast("                O")
+    print_fast("               /|\\")
+    print_fast("                |")
+    print_fast("               / \\")
+    print_fast(".^.^.^.^.^.^.^.^.^.^.^.^.^.^.^.")
+
+
+def weapon():
+    print_fast("            __-^^-_______________________/\\_")
+    print_fast(" |---\\_____| |-_-_-_-__---[]-^^-]--]__------]_________")
+    print_fast("|    ======|_________-_-_^^-^-__]_]_]_______]---------'")
+    print_fast("|----/   |_|_____________________|      \\__/")
+    print_fast(" |__/         /====/")
+    print_fast("             [][][]")
+    print_fast("            /====/")
+    print_fast("            [][][]")
+
+
 def bat():
     print_flash("                 /\\      /\\")
     print_flash("      ....      /A \\^^^^/ A\\      ....")
@@ -134,7 +153,8 @@ def pre_intro_game(items, same_creature, treasure, treasure_item):
 
 # The real start of story for the game:
 def intro(items, same_creature, treasure, treasure_item):
-    print_pause("You find yourself standing in an open field, "
+    standing()
+    print_pause("\nYou find yourself standing in an open field, "
                 "filled with grass and yellow butterflies.")
     print_pause("In the distance is a rainbow. You wonder if there "
                 "is a pot of gold at the end of it.")
@@ -289,10 +309,11 @@ def cave(items, same_creature, treasure, treasure_item):
     elif "butter_knife" in items:
         print_pause("It turns out to be only a very small cave.\n")
         print_pause("Your eye catches a glint of metal behind a rock.\n")
-        print_pause("You have found a shiny gold assault rifle!")
+        print_pause("\nYou have found a shiny gold assault rifle!\n")
         print_pause("What is this doing in here?")
         print_pause("You discard your silly old butter knife and take "
                     "the assault rifle with you.\n")
+        time.sleep(3)
         items.append("rifle")
         items.remove("butter_knife")
         print_pause("*screech*                *screech*\n")
@@ -305,11 +326,12 @@ def cave(items, same_creature, treasure, treasure_item):
                     "with scenes of a deadly battle, you are unsure "
                     "how the mechanisms work.\n")
         print_pause("Let me see where the bullets go...\n")
-        print_pause("This assault rifle is highly unusual. There are no "
+        weapon()
+        print_pause("\nThis assault rifle is highly unusual. There are no "
                     "triggers. Instead, there appear to be two different "
                     "shaped buttons on either side. You don't know what "
                     "they do, but you assume this is how you can check "
-                    "for bullets.")
+                    "for bullets.\n")
         check_out_rifle(items, same_creature, treasure, treasure_item)
         print_pause("You hear a thud. A bat drops to the ground.\n")
         print_pause("Oh my...I should be more careful with this!\n")

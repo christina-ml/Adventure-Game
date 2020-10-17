@@ -13,10 +13,10 @@ def print_fast(message_to_print):
     print(message_to_print)
     time.sleep(0.2)
 
+
 def print_flash(message_to_print):
     print(message_to_print)
     time.sleep(0.05)
-
 
 
 def house_cave():
@@ -318,7 +318,8 @@ def cave(items, same_creature, treasure, treasure_item):
         items.remove("butter_knife")
         print_pause("*screech*                *screech*\n")
         bat()
-        print_pause("*screech*\nEek! A bat! It was hit by your butter knife.\n")
+        print_pause("*screech*\nEek! A bat! It was hit by your butter "
+                    "knife.\n")
         print_pause("Your eyes shimmer as you lift the gun up to the light "
                     "in the cave.")
         print_pause("You want to check the gun to see if it's loaded, but "

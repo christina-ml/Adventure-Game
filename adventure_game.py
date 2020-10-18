@@ -103,9 +103,9 @@ def choose_outside_or_inside(items, same_creature, treasure, treasure_item):
                     "engine building board game featuring over 170 "
                     "different bird cards. To play a bird, you need to "
                     "gain the food symbol indicated on each card.\n")
-        print_pause("In your hand you have a bird you'd like to play\n.")
+        print_pause("In your hand you have a bird you'd like to play.\n")
         print_pause("The dice have food symbols on them, representing six "
-                    "different foods that the birds in the game eat\n.")
+                    "different foods that the birds in the game eat.\n")
         print_pause("It's your turn. Roll the dice.\n")
         agree = input("Do you want to roll the dice? It's your turn.\n"
                       "(Type something below)\n").upper()
@@ -160,7 +160,7 @@ def intro(items, same_creature, treasure, treasure_item):
                 "is a pot of gold at the end of it.")
     print_pause("It just rained, so the ground is muddy.")
     print_pause("Your sneakers are sticking to the mud with each step.\n")
-    print_pause("Rumor has it that a " + same_creature + " is somewhere "
+    print_pause(f"Rumor has it that a {same_creature} is somewhere "
                 "around here, and has been terrifying the nearby village.")
     print_pause("In front of you is an abandoned house.")
     print_pause("To your right is a creepy dark cave with screeching bats.")
@@ -192,7 +192,7 @@ def treasure_question(items, same_creature, treasure, treasure_item):
     if response == "leave":
         print_pause("Good idea. The skeleton can guard his treasure.\n")
     elif response == "take":
-        print_pause("You decide to pick up the " + treasure_item +
+        print_pause(f"You decide to pick up the {treasure_item}"
                     " for good luck. Maybe this will come in handy "
                     "later.\n")
         treasure.append(treasure_item)
@@ -217,9 +217,9 @@ def field_run(items, same_creature, treasure, treasure_item):
 def house(items, same_creature, treasure, treasure_item):
     print_pause("You approach the door of the abandoned house.")
     print_pause("You are about to knock when the door opens "
-                "and out steps a " + same_creature + ".")
-    print_pause("Eep! This is the " + same_creature + "'s house!")
-    print_pause("The " + same_creature + " attacks you!")
+                f"and out steps a {same_creature}.")
+    print_pause(f"Eep! This is the {same_creature}'s house!")
+    print_pause(f"The {same_creature} attacks you!")
     if "butter_knife" in items:
         enter_house_with_knife(items, same_creature, treasure, treasure_item)
     elif "rifle" in items:
@@ -233,7 +233,7 @@ def enter_house_with_knife(items, same_creature, treasure, treasure_item):
     if response == "1":
         print_pause("You do your best...")
         print_pause("but your butter knife is no match for "
-                    "the " + same_creature + ".")
+                    f"the {same_creature}.")
         print_pause("You have been defeated!")
         items.remove("butter_knife")
         play_again(items, same_creature, treasure, treasure_item)
@@ -251,17 +251,17 @@ def enter_house_with_rifle(items, same_creature, treasure, treasure_item):
     response = input("Would you like to (1) fight with assault rifle "
                      "or (2) run away?\n")
     if response == "1":
-        print_pause("As the " + same_creature + " moves to attack, "
+        print_pause(f"As the {same_creature} moves to attack, "
                     "you quickly grab your new assault rifle.")
         for treasure_item in treasure:
-            print_pause("The " + same_creature + " is distracted by "
-                        "your " + treasure_item + " and stumbles.")
+            print_pause(f"The {same_creature} is distracted by "
+                        f"your {treasure_item} and stumbles.")
         print_pause("The golden assault rifle shines brightly in your "
                     "hand as you brace yourself for the attack.")
-        print_pause("But the " + same_creature + " takes one look at "
+        print_pause(f"But the {same_creature} takes one look at "
                     "your shiny "
                     "new toy and runs away!")
-        print_pause("You have rid the town of the " + same_creature +
+        print_pause(f"You have rid the town of the {same_creature}"
                     ". You are victorious!")
         print_pause("I repeat, You are victorious!")
         items.remove("rifle")
@@ -271,7 +271,7 @@ def enter_house_with_rifle(items, same_creature, treasure, treasure_item):
                     "don't seem to have been followed.")
         if treasure_item in treasure:
             print_pause("At least you still have "
-                        "your " + treasure_item + " with you. "
+                        f"your {treasure_item} with you. "
                         "What good luck!")
         house_or_cave_question(items, same_creature, treasure,
                                treasure_item)
